@@ -1,3 +1,46 @@
 @import 'utils';
 @import 'setup';
 @import 'typography';
+
+main {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+    margin-bottom: -200px;
+    position: absolute;
+    width: 100%;
+    // background: pink;
+}
+
+.intro-section {
+    background: #139a43;
+    border: 3px solid #4cb963;
+    border-radius: 4px;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.background {
+    height: 300vh;
+    overflow: hidden;
+    position: relative;
+    background: #139a43;
+    
+    &__roster {
+        position: absolute;
+        top: -200px;
+        &__icon {
+            display: inline-block;
+            stroke: darkgreen;
+        }
+    }
+}
+
+.icon {
+    // float: left;
+    @include iconSize();
+}
