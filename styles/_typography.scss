@@ -1,0 +1,15 @@
+h1, h2, h3, h4, p, {
+    color: whitesmoke;
+}
+
+.content-section__container1 {
+    &__title {
+        text-align: center;
+    }
+    &__para {
+
+    }
+    &__btn {
+        // How to center?
+    }
+}

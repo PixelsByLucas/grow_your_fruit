@@ -2,26 +2,38 @@
 @import 'setup';
 @import 'typography';
 
-main {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
+.viewport {
     height: 100vh;
     margin-bottom: -200px;
     position: absolute;
     width: 100%;
-    // background: pink;
 }
 
-.intro-section {
+.content-section {
     background: #139a43;
-    border: 3px solid #4cb963;
+    border: 3px solid #34cb96;
     border-radius: 4px;
     width: 50%;
+    height: 25%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform:translate(-50%,-50%);
-    text-align: center;
+    box-shadow: 10px 16px 10px #108c3c;
+    &__container1 {
+        width: 50%;
+        margin: 0 auto;
+    }
+    &__container2 {
+        width: 50%;
+        margin: 0 auto;
+        display: none;
+    }
+    &__container3 {
+        width: 50%;
+        margin: 0 auto;
+        display: none;
+    }
 }
 
 .background {
@@ -35,7 +47,6 @@ main {
         top: -200px;
         &__icon {
             display: inline-block;
-            stroke: darkgreen;
         }
     }
 }

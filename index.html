@@ -19,14 +19,35 @@
         <li class="background__roster__icon"><img src="images/icons/noun_350629_cc.svg" alt="" class="icon"></li>
         <li class="background__roster__icon"><img src="images/icons/noun_350629_cc.svg" alt="" class="icon"></li>
         <li class="background__roster__icon"><img src="images/icons/noun_350629_cc.svg" alt="" class="icon"></li>
-
-        
     </ul> -->
    
     
-    <main>
-        <section class="intro-section">
-            <h1>grow your fruit</h1>
+    <main class="viewport">
+        <section class="content-section">
+            <div class="content-section__container1">
+                <h1 class="content-section__container1__title">grow your fruit</h1>
+                <p class="content-section__container1__para">Let this quiz help you decide what kind of fruit to plant on your balcony or in your backyard this season.</p>
+                <button class="content-section__container1__btn">Take The Quiz</button>
+            </div>
+            <div class="content-section__container2">
+                <h1>location</h1>
+                <p>First tell us where you live!</p>
+                <p>By using data from Canada's <a href="http://www.planthardiness.gc.ca/?m=1" target="_blank">plant hardiness zones</a> we'll be able to determine what grows best in your area</p>
+                <form action="#">
+                    <label for="city">Select your city</label>
+                    <select name="cityList" id="city" class="content-section__container2__select"></select>
+                    <button class="content-section__container2__btn">next</button>
+                </form>
+            </div>
+            <div class="content-section__container3">
+                <h1>tree or bush</h1>
+                <p>Do you prefer fruit from fruit trees or berry bushes?</p>
+                <form action="#" class="content-section__container3__radio">
+                    <input type="radio" name="tree-bush" value="tree">
+                    <input type="radio" name="tree-bush" value="bush">
+                    <button class="content-section__container3__btn">submit</button>
+                </form>
+            </div>
         </section>
     </main>
 <!-- jQuery CDN -->

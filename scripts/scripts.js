@@ -150,11 +150,12 @@ app.zonesObj = {
     8: ['Surrey', 'Richmond', 'Coquitlam', 'Langley'],
     8.5: ['Vancouver', 'Burnaby', 'Abbotsford', 'Saanich'],
 }
-
+// Function to return random number between 0 - max
 app.random = function(max) {
     return Math.floor(Math.random() * max);
 }
 
+// app.background holds all the code necessary to make the background work
 app.background = {};
 // View port height
 app.background.vpHeight = $('main').height();
@@ -165,12 +166,12 @@ app.background.lastIconPos = 0;
 // Array used to store icons 
 app.background.icons = [350629, 351039, 351121, 351156, 351625, 351637, 351802, 351812, 351945, 352260, 353283];
 
+// Uses app.random() to select a random icon from app.background.icons
 app.background.randomIcon = function() {
-    // let num = app.random(app.background.icons.length);
     return app.background.icons[app.random(app.background.icons.length)];
 }
 
-// Function to add a new row of icons
+// Function to add a new row of icons, and animate them
 app.background.addRow = function(){
     $('.background').prepend('<ul class="background__roster"></ul>');
     for(let i = 1; i <= 10; i++){
@@ -186,8 +187,6 @@ app.background.addRow = function(){
     app.background.iconHeight = $(".background__roster__icon").height();
     // Updates iconStartPos when new row is added
     app.background.iconStartPos = $(".background__roster").position();
-    console.log(`first iconStartPos ${app.background.iconStartPos.top}`);
-    console.log(`first iconHeight: ${app.background.iconHeight}`);
 }
 
 app.background.interval = function(){
@@ -200,26 +199,105 @@ app.background.interval = function(){
         if (app.background.lastIconPos.top > app.background.vpHeight) {
             app.background.removeRow();
         }
-        // if (app.background.lastIconPos.top)
+        // Calls app.background.addRow() once there is enough space.
         if (app.background.firstIconPos.top >= (app.background.iconStartPos.top + app.background.iconHeight)) {
-            console.log("newone");
             app.background.addRow();
         }
 
     }, 500);
 }
-
+// Removes the last row of icons when called
 app.background.removeRow = function(){
     $('.background__roster').last().remove();
 }
 
+// app.quiz holds all code necessary to make the quiz work
+app.quiz = {};
+app.quiz.cityArr = [];
+app.quiz.userZone = 0;
+app.quiz.userLocation = "";
+app.quiz.userTreeBush = "";
+
+// Populates location drop down with city names
+app.quiz.populateSelect = function() {
+    for(let i = 0; i < app.quiz.cityArr.length; i++){
+        $(".content-section__container2__select")
+        .append(`<option value="${app.quiz.cityArr[i]}">${app.quiz.cityArr[i]}</option`);
+    }
+}
+
+// Takes city names in app.quiz.zonesObj and concatinates them to app.quiz.cityArr
+app.quiz.objToArr = function() {
+    for (cityArr in app.zonesObj){
+        app.quiz.cityArr = app.quiz.cityArr
+        .concat(app.zonesObj[cityArr])
+        .sort(); 
+    }
+    app.quiz.populateSelect();
+}
+
+//Based on user criteria, create array of all viable plants in solutionObj
+app.quiz.viablePlantsArr = function() {
+    let viablePlantsArr = [];
+
+    for (key in app.solutionObj[app.quiz.userTreeBush]){
+        // console.log(key);
+        if (app.solutionObj[app.quiz.userTreeBush][key]["zone"] <= app.quiz.userZone){
+            console.log(key);
+            app.quiz.viablePlantsArr.push(app.solutionObj[app.quiz.userTreeBush][key]);
+            console.log(app.quiz.viablePlantsArr);
+        }
+    }
+}
+
+// app.viablePlantsArr = function () {
+//   
+
+//     for (let key in solutionObj[$treeOrBush]) {
+//         if (solutionObj[$treeOrBush][key]['zone'] <= $userZone) { //Here we compare plant hardiness zone to user hardiness zone
+//             viablePlantsArr.push(solutionObj[$treeOrBush][key]); //If the zones are compatible, we push the particular plant object into viablePlantsArr 
+//         }
+//     }
+//     return viablePlantsArr[app.randomViablePlant(viablePlantsArr.length)];
+// }
+
+// Find user zone based on their location, using app.zoneObj
+app.quiz.findUserZone = function(){
+    for(cityArr in app.zonesObj){
+        let $num = $.inArray(app.quiz.userLocation, app.zonesObj[cityArr]);
+        if($num >= 0){
+            app.quiz.userZone = Number(cityArr);
+            return
+        }
+    }
+}
+
+//Event listeners
 app.listeners = function() {
+    // Window resize listeners
     $(window).resize(function () {
         // Updates vpHeight value when window resized
         app.vpHeight = $('main').height();
         //Updates iconHeight value when window resizes
         app.background.iconHeight = $(".background__roster__icon").height();
-        console.log(`resize iconHeight ${app.background.iconHeight}`)
+    });
+    $('.content-section__container1__btn').on('click', function(e){
+        e.preventDefault();
+        $('.content-section__container1').hide();
+        $('.content-section__container2').show();
+    });
+    $(".content-section__container2__btn").on("click", function(e){
+        e.preventDefault();
+        $('.content-section__container2').hide();
+        $('.content-section__container3').show();
+        app.quiz.userLocation = $(".content-section__container2__select option:selected").val();
+        app.quiz.findUserZone();
+    });
+    $(".content-section__container3__btn").on("click", function(e){
+        e.preventDefault();
+        $(".content-section__container3").hide();
+        app.quiz.userTreeBush = $("input[name=tree-bush]:checked").val();
+        app.quiz.viablePlantsArr();
     });
 }
 
@@ -227,6 +305,7 @@ app.init = function(){
     app.listeners();
     app.background.addRow();
     app.background.interval();
+    app.quiz.objToArr();
 }
 $(function(){
     app.init();
