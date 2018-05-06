@@ -4,9 +4,9 @@
 
 .viewport {
     height: 100vh;
-    margin-bottom: -200px;
-    position: absolute;
+    // margin-bottom: -200px;
     width: 100%;
+    position: relative;
 }
 
 .content-section {
@@ -14,11 +14,8 @@
     border: 3px solid #34cb96;
     border-radius: 4px;
     width: 50%;
-    height: 25%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform:translate(-50%,-50%);
+    height: 50%;
+    margin:25vh auto;
     box-shadow: 10px 16px 10px #108c3c;
     &__container1 {
         width: 50%;
@@ -36,10 +33,26 @@
     }
 }
 
+.content-section__display {
+        width: 90%;
+        margin: 0 auto;
+        display: none;
+    &__img {
+        width: 50%;
+        max-width: 640px;
+        max-height: 426px;
+        border-radius: 4px;
+        float: left;
+    }
+    &__text-box {
+        float: left;
+    }
+}
+
 .background {
     height: 300vh;
     overflow: hidden;
-    position: relative;
+    // position: relative;
     background: #139a43;
     
     &__roster {

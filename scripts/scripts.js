@@ -1,5 +1,25 @@
 const app = {};
 
+
+// Paul Kentish - Medlars
+// Melinda Stuart - Capful of Moonglow
+// Catherine Bukowski - Paw Paw
+// tariusxj - persimmon tree
+// Toshihiro Gamo - Fruits of Japanese Plum
+// manuel m.v. - Loganberry
+// Lotus Johnson - goumiberry
+// Rastoney - Mulberry tree
+// Michael Camilleri - Pineberries
+// Edsel Little - Elderberries
+// Schisandra Vine - Tatters ✾
+// Goji Berries - Lotus Johnson
+// Aronia Berry - Birgit Fostervold
+// Autumn Olives - mwms1916
+
+
+
+
+
 // solutionObj used as the key to determine which plant to return to the user
 app.solutionObj = {
     tree: {
@@ -15,7 +35,7 @@ app.solutionObj = {
             zone: 4,
             type: 'European Pear Tree',
             name: 'Moonglow Pear Tree',
-            img: 'https://cdn.shopify.com/s/files/1/1488/2350/products/moonglow_pear.jpg?v=1475087811',
+            img: 'images/display/moonglow-M.jpg',
             info: 'A medium to large sized yellow fruit with a pink blush.  Soft, juicy, white flesh and almost no grit.  Excellent mild flavour that is well suited for fresh eating or canning.  Stores well.  Moonglow is a healthy tree that is fireblight resistant.  Good choice for commercial production or home gardens.  Ripens to peak flavour in cold storage for 10 to 15 days after picking.',
             link: 'https://www.backyardgardener.com/plantname/pyrus-communis-moonglow-pear/'
         },
@@ -31,7 +51,7 @@ app.solutionObj = {
             zone: 5,
             type: 'Paw Paw Tree',
             name: 'Paw Paw Tree',
-            img: 'https://c4media.naturehills.com/media/catalog/product/cache/afad95d7734d2fa6d0a8ba78597182b7/p/a/paw_paw_fruit_425x425.jpg',
+            img: 'images/display/pawpaw-M.jpg',
             info: 'Long before Columbus sailed the ocean blue, North American Indians were enjoying the vanilla custard flavoured flesh of this northern banana.  Large, lush, drooping leaves give the pawpaw a tropical appearance.  A slow growing pyramid shaped tree, it can reach anywhere from 10-25ft at maturity.  It has virtually no insect or diseas problems and requires very little pruning.  This exotic and fascinating native tree is in high demand.',
             link: 'https://www.thestar.com/life/2016/09/16/pawpaw-is-a-tropical-fruit-that-actually-grows-in-ontario.html'
         },
@@ -39,7 +59,7 @@ app.solutionObj = {
             zone: 5,
             type: 'Persimmon Tree',
             name: 'Persimmon Tree',
-            img: 'https://i.pinimg.com/originals/7e/16/64/7e16643cc31fd70debda6bd8190d5146.jpg',
+            img: 'images/display/persimmon-M.jpg',
             info: 'How does one describe a persimmon... Perhaps you could imagine a perfect orb of apricot jelly, solid enough to bite into, yet jelly enough that it drips down your chin... A persimmon is one thing in life you must try for yourself!  Please eat only very ripe fruit as an under ripe Persimmon is very astringent!  This member of the ebony family can reach 50 feet in height and bears small orange fruit, 1-2 inches in diameter.  Persimmon trees are dioecious and require both female and male trees to set fruit!',
             link: 'https://en.wikipedia.org/wiki/Persimmon'
         },
@@ -47,7 +67,7 @@ app.solutionObj = {
             zone: 5,
             type: 'Medlar Tree',
             name: 'Royal Medlar Tree',
-            img: 'https://cdn.gardenista.com/wp-content/uploads/2015/04/fields/medlar%20tree%20shape%20and%20topiary.jpg',
+            img: 'images/display/medlar-M.jpg',
             info: 'Medlar trees with their sweet, soft and delicious apple-like fruit are very rare and quite unique.  Their history goes back to medieval times in England and Europe.  In the Middle Ages most walled monastery gardens included a number of these graggy but elegant trees.  A medlar in bloom will rival a rose bush in dignified beauty with its large white blossoms nestled in a whorl of dark green leaves.',
             link: 'https://en.wikipedia.org/wiki/Mespilus_germanica'
         },
@@ -55,7 +75,7 @@ app.solutionObj = {
             zone: 2.5,
             type: 'Plum Tree',
             name: 'Waneta Plum Tree',
-            img: 'https://www.horsfordnursery.com/wp-content/uploads/2017/03/xPrunus20Waneta.jpg',
+            img: 'images/display/wanetaplum-M.jpg',
             info: 'Waneta was named after a Yanktonai Indian chief who became famous in the War of 1812.  Introduced by NE Hanson of South Dakota in 1913, the extremely cold hardy tree is reliable, productive and precocious.  Very large, maroon-red, pointy shaped plums have tender, sweet moderately juicy orange flesh and a small pit.  High quality fruit is fine for fresh use or processing.',
             link: 'https://www.starkbros.com/products/fruit-trees/plum-trees/waneta-plum'
         }
@@ -150,12 +170,16 @@ app.zonesObj = {
     8: ['Surrey', 'Richmond', 'Coquitlam', 'Langley'],
     8.5: ['Vancouver', 'Burnaby', 'Abbotsford', 'Saanich'],
 }
+
+
+// === generic functions ===
 // Function to return random number between 0 - max
 app.random = function(max) {
     return Math.floor(Math.random() * max);
 }
 
-// app.background holds all the code necessary to make the background work
+
+// === background logic ===
 app.background = {};
 // View port height
 app.background.vpHeight = $('main').height();
@@ -211,13 +235,15 @@ app.background.removeRow = function(){
     $('.background__roster').last().remove();
 }
 
-// app.quiz holds all code necessary to make the quiz work
+
+// === quiz logic ===
 app.quiz = {};
 app.quiz.cityArr = [];
 app.quiz.userZone = 0;
 app.quiz.userLocation = "";
 app.quiz.userTreeBush = "";
 
+// = setup =
 // Populates location drop down with city names
 app.quiz.populateSelect = function() {
     for(let i = 0; i < app.quiz.cityArr.length; i++){
@@ -239,27 +265,15 @@ app.quiz.objToArr = function() {
 //Based on user criteria, create array of all viable plants in solutionObj
 app.quiz.viablePlantsArr = function() {
     let viablePlantsArr = [];
-
+    // Iterate over app.solutionObj selecting for tree||bush === app.quiz.userTreeBush
     for (key in app.solutionObj[app.quiz.userTreeBush]){
-        // console.log(key);
+        // Selecting for plants where zone <= the user's zone
         if (app.solutionObj[app.quiz.userTreeBush][key]["zone"] <= app.quiz.userZone){
-            console.log(key);
-            app.quiz.viablePlantsArr.push(app.solutionObj[app.quiz.userTreeBush][key]);
-            console.log(app.quiz.viablePlantsArr);
+            viablePlantsArr.push(key);
         }
     }
+    app.quiz.populateDisplay(viablePlantsArr);
 }
-
-// app.viablePlantsArr = function () {
-//   
-
-//     for (let key in solutionObj[$treeOrBush]) {
-//         if (solutionObj[$treeOrBush][key]['zone'] <= $userZone) { //Here we compare plant hardiness zone to user hardiness zone
-//             viablePlantsArr.push(solutionObj[$treeOrBush][key]); //If the zones are compatible, we push the particular plant object into viablePlantsArr 
-//         }
-//     }
-//     return viablePlantsArr[app.randomViablePlant(viablePlantsArr.length)];
-// }
 
 // Find user zone based on their location, using app.zoneObj
 app.quiz.findUserZone = function(){
@@ -270,6 +284,14 @@ app.quiz.findUserZone = function(){
             return
         }
     }
+}
+
+app.quiz.populateDisplay = function (viablePlantsArr) {
+    let solution = viablePlantsArr[app.random(viablePlantsArr.length)];
+    $('.content-section__display__img').attr("src", app.solutionObj[this.userTreeBush][solution]["img"]);
+    console.log(app.solutionObj[this.userTreeBush][solution]["img"]);
+    $(".content-section__display").show();
+
 }
 
 //Event listeners
