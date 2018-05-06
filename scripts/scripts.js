@@ -269,9 +269,10 @@ app.quiz.viablePlantsArr = function() {
     for (key in app.solutionObj[app.quiz.userTreeBush]){
         // Selecting for plants where zone <= the user's zone
         if (app.solutionObj[app.quiz.userTreeBush][key]["zone"] <= app.quiz.userZone){
-            viablePlantsArr.push(key);
+            viablePlantsArr.push(app.solutionObj[app.quiz.userTreeBush][key]);
         }
     }
+    console.log(viablePlantsArr)
     app.quiz.populateDisplay(viablePlantsArr);
 }
 
@@ -288,8 +289,8 @@ app.quiz.findUserZone = function(){
 
 app.quiz.populateDisplay = function (viablePlantsArr) {
     let solution = viablePlantsArr[app.random(viablePlantsArr.length)];
-    $('.content-section__display__img').attr("src", app.solutionObj[this.userTreeBush][solution]["img"]);
-    console.log(app.solutionObj[this.userTreeBush][solution]["img"]);
+    $(".content-section__display__img").attr("src", solution.img);
+    $(".content-section__display__text-box__title").text(solution.name);
     $(".content-section__display").show();
 
 }
