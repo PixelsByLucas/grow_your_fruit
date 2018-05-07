@@ -1,15 +1,80 @@
-h1, h2, h3, h4, p, {
+// === fonts ===
+    // font-family: 'Bungee', cursive;
+    // font-family: 'Nunito Sans', sans-serif;
+
+body {
+    font-size: 62.5%;
+}
+
+button {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.3rem;
+    height: 44px;
+    padding: 0 10px;
+    background: #f7f052;
+    border: none;
+    font-weight: 700;
+    border-radius: 2px;
+    color: #11913e;
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 10px 16px 10px #108c3c;
+    }
+}
+
+h1, h2, h3, h4, p, li, label, select {
+    color: whitesmoke;
+}
+h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 2.5rem;
+    line-height: 1;
+    @media screen and (max-width: 700px){
+        font-size: 2rem;
+    }
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+p, a, label, select {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+li {
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.1;
+}
+
+a:visited {
+    color: whitesmoke;
+}
+a:link {
     color: whitesmoke;
 }
 
-.content-section__container1 {
-    &__title {
-        text-align: center;
-    }
-    &__para {
-
-    }
-    &__btn {
-        // How to center?
-    }
+select {
+    height: 44px;
+    color: #11913e;
+    background: whitesmoke;
+    font-weight: 700;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
 }
+
+	
+.container2__label {
+    font-weight: 700;
+    line-height: 0;
+}
+
+
+
+// .display__text-box__list__item {
+//     color: whitesmoke;
+// }
+

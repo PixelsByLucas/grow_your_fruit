@@ -28,15 +28,23 @@ app.solutionObj = {
             type: 'European Pear Tree',
             name: 'Honey Sweet Pear Tree',
             img: 'https://www.starkbros.com/images/dynamic/1613-960x960.jpg',
-            info: 'Similar to the well known Sugar Pear but in a larger, longer keeping fruit.  Delectable, smooth, creamy flesh is super sweet and firm.  Honey Sweet is hardy and resistant to fireblight and foliage diseases.  It is one of the few pears that will set fruit without a pollenizer, but the fruit will be bigger if you have another varierty nearby.  Ripens early September.',
-            link: 'https://www.backyardgardener.com/plantname/pyrus-communis-honeysweet-pear/'
+            info: {
+                taste: "Sweet, smooth, creamy taste",
+                plantFact: "Hardy and resistant to fireblight and foliage diseases",
+                plantBlerb: "One of the few pears that will bear fruit without a pollenizer"
+            },
+            link: "https://www.starkbros.com/products/fruit-trees/pear-trees/stark-honeysweet-pear"
         },
         moonglowPear: {
             zone: 4,
             type: 'European Pear Tree',
             name: 'Moonglow Pear Tree',
             img: 'images/display/moonglow-M.jpg',
-            info: 'A medium to large sized yellow fruit with a pink blush.  Soft, juicy, white flesh and almost no grit.  Excellent mild flavour that is well suited for fresh eating or canning.  Stores well.  Moonglow is a healthy tree that is fireblight resistant.  Good choice for commercial production or home gardens.  Ripens to peak flavour in cold storage for 10 to 15 days after picking.',
+            info: {
+                taste: "White flesh with a soft, juicy flavour",
+                plantFact: "Healthy tree, fireblight resistant",
+                plantBlerb: "Ripens to peak flavour in cold storage for 10 to 15 days after picking"
+            },
             link: 'https://www.backyardgardener.com/plantname/pyrus-communis-moonglow-pear/'
         },
         chojuroRumPear: {
@@ -44,7 +52,11 @@ app.solutionObj = {
             type: 'Asian Pear Tree',
             name: 'Chojuro Rum Pear Tree',
             img: 'https://www.starkbros.com/images/dynamic/1617-960x960.jpg',
-            info: 'Sometimes called "old world", it originated in Japan back in 1895.  Medium to large, dark golden fruit has a rich, distinctive, rum-like flavour.  Mid-size tree is vigorous, early-bearing and productive.  Stores for up to 6 months.',
+            info: {
+                taste: "Dark, golden fruit with rich rum-like flavour",
+                plantFact: "Fruit stores up to 6 months",
+                plantBlerb: "Sometimes called 'old world', it originated in Japan in 1895"
+            },
             link: 'https://www.backyardgardener.com/plantname/pyrus-pyrifolia-chojuro-asian-pear/'
         },
         pawPawTree: {
@@ -52,7 +64,11 @@ app.solutionObj = {
             type: 'Paw Paw Tree',
             name: 'Paw Paw Tree',
             img: 'images/display/pawpaw-M.jpg',
-            info: 'Long before Columbus sailed the ocean blue, North American Indians were enjoying the vanilla custard flavoured flesh of this northern banana.  Large, lush, drooping leaves give the pawpaw a tropical appearance.  A slow growing pyramid shaped tree, it can reach anywhere from 10-25ft at maturity.  It has virtually no insect or diseas problems and requires very little pruning.  This exotic and fascinating native tree is in high demand.',
+            info: {
+                taste: "Vanilla, custard flavoured flesh.",
+                plantFact: "Virtually no insect or diseas problems.",
+                plantBlerb: "Surprisingly, this tropical tree is native to Canada."
+            },
             link: 'https://www.thestar.com/life/2016/09/16/pawpaw-is-a-tropical-fruit-that-actually-grows-in-ontario.html'
         },
         persimmonTree: {
@@ -60,7 +76,11 @@ app.solutionObj = {
             type: 'Persimmon Tree',
             name: 'Persimmon Tree',
             img: 'images/display/persimmon-M.jpg',
-            info: 'How does one describe a persimmon... Perhaps you could imagine a perfect orb of apricot jelly, solid enough to bite into, yet jelly enough that it drips down your chin... A persimmon is one thing in life you must try for yourself!  Please eat only very ripe fruit as an under ripe Persimmon is very astringent!  This member of the ebony family can reach 50 feet in height and bears small orange fruit, 1-2 inches in diameter.  Persimmon trees are dioecious and require both female and male trees to set fruit!',
+            info: {
+                taste: "Tastes like apricot with a jelly texture",
+                plantFact: "Require both female and male trees to bear fruit",
+                plantBlerb: "This member of the ebony family can reach 50 feet in height",
+            },
             link: 'https://en.wikipedia.org/wiki/Persimmon'
         },
         medlarTree: {
@@ -68,7 +88,11 @@ app.solutionObj = {
             type: 'Medlar Tree',
             name: 'Royal Medlar Tree',
             img: 'images/display/medlar-M.jpg',
-            info: 'Medlar trees with their sweet, soft and delicious apple-like fruit are very rare and quite unique.  Their history goes back to medieval times in England and Europe.  In the Middle Ages most walled monastery gardens included a number of these graggy but elegant trees.  A medlar in bloom will rival a rose bush in dignified beauty with its large white blossoms nestled in a whorl of dark green leaves.',
+            info: {
+                taste: "Sweet, soft, apple-like taste",
+                plantFact: "In the middle ages most walled monasteries had a number of medlar trees",
+                plantBlerb: "A medlar tree in bloom can rival a rose bush in beauty"
+            },
             link: 'https://en.wikipedia.org/wiki/Mespilus_germanica'
         },
         wanetaPlum: {
@@ -76,7 +100,11 @@ app.solutionObj = {
             type: 'Plum Tree',
             name: 'Waneta Plum Tree',
             img: 'images/display/wanetaplum-M.jpg',
-            info: 'Waneta was named after a Yanktonai Indian chief who became famous in the War of 1812.  Introduced by NE Hanson of South Dakota in 1913, the extremely cold hardy tree is reliable, productive and precocious.  Very large, maroon-red, pointy shaped plums have tender, sweet moderately juicy orange flesh and a small pit.  High quality fruit is fine for fresh use or processing.',
+            info: {
+                taste: "Tender, sweet & moderately juicy",
+                plantFact: "Extremely cold hardy, reliable & productive",
+                plantBlerb: "Named after a Yanktonai chief who became famous during the War of 1812"
+            },
             link: 'https://www.starkbros.com/products/fruit-trees/plum-trees/waneta-plum'
         }
 
@@ -86,72 +114,108 @@ app.solutionObj = {
             zone: 6,
             type: 'Blackberry, Raspberry Cross',
             name: 'Loganberry',
-            img: 'https://www.scotplantsdirect.co.uk/image/cache/data/BOYSENBERRIES/BOYSENBERRY%20HEDGE/boysenberry%20bush-500x500.jpg',
-            info: 'Discovered in California in the late 1800s, it is believed to be a cross of wild blackberry and red raspberry.  Large, tender, dark red, elongated berries have their own uniquely delictable taste that is considered by many people to be second to none.  Loganberry juice is highly regarded for its health boosting properties.  Other uses include baking, freezing preserves and wine besides fresh eating.  The fruit ripens over an extended time period.  Give the trailing canes a trellis and winter protection.',
+            img: 'images/display/loganberry-M.jpg',
+            info: {
+                taste: "Unique sweet & tart flavour.",
+                plantFact: "Loganberry juice is highly regarded for its health boosting properties.",
+                plantBlerb: "Discovered in the late 1800s, it is believed to be a cross of wild blackberry and raspberry."
+            },
             link: 'https://en.wikipedia.org/wiki/Loganberry'
         },
         goumiBerry: {
             zone: 5,
             type: 'Goumi Bush',
             name: 'Goumi Bush',
-            img: 'https://st.hzcdn.com/simgs/e03238f504b0429c_8-7534/home-design.jpg',
-            info: 'The most compact, desirable and hard-to-find member of the nitrogen-fixing eleagnus family.  Goumi bushes are usually only 3, high and wide at maturity.  The slender leaves are dark green on the upper side and silvery below which creates a shimmering effect when a light breeze stirs the foliage.  In late spring the bush is covered in a fragrant haze of small yellow flowers folloowed by glossy, cherry-red fruits flecked with silver.  They contain a single hard seed and have a sprightly, refreshing flavour.',
+            img: 'images/display/goumiberry-M.jpg',
+            info: {
+                taste: "Sprightly, refreshing flavour.",
+                plantFact: "In late spring the bush is covered in a fragrant haze of small yellow flowers.",
+                plantBlerb: "The most desirable and hard to find member of the nitrogen-fixing eleagnus family."
+            },
             link: 'https://en.wikipedia.org/wiki/Elaeagnus_multiflora'
         },
-        blackBeautyMulberryBush: {
+        mulberryBush: {
             zone: 4.5,
             type: 'Mulberry Bush',
-            name: 'Black Beauty Mulberry Bush',
-            img: 'https://plant.daleysfruit.com.au/ml/mulberry-black-english-1894.jpg',
-            info: 'This variety of Persian mulberry produces flavourful blackberry-like fruit that is large, juicy and black.  Can be used for fresh eating, deserts, jam, wine and the list goes on!  It ripens over an extended period of time from early to mid-summer.',
+            name: 'Mulberry Bush',
+            img: 'images/display/mulberry-M.jpg',
+            info: {
+                taste: "flavourful blackberry-like fruit.",
+                plantFact: "Can be used for fresh eating, jam, wine and more.",
+                plantBlerb: "Ripens over an extended period of time from early to mid-summer."
+            },
             link: 'https://www.growingmulberry.org/morus-nigra'
         },
-        wonderfulPineberry: {
+        pineberry: {
             zone: 4,
             type: 'Strawberry',
-            name: 'Wonderful Pineberry',
-            img: 'https://www.fast-growing-trees.com/images/D/Wonderful-Pineberry-Pot-450w.jpg',
-            info: 'Demand is strong for this wonderful new variety.  Attractive white berries accented with holiday red seeds add an intriguing dimension to any fruit salad.  The pineberry part of the name refers to the delicious pineapple flavour that distinguishes this sweet, aromatic berry.  Firm, medium sized fruit from a hardy, everbearing plant that you can easily tuck into your flowerbed or use as a ground cover.  Also ideal for hanging pots as it produces few runners.',
+            name: 'Pineberry',
+            img: 'images/display/pineberry-M.jpg',
+            info: {
+                taste: "Delicious pineapple & strawberry flavour",
+                plantFact: "Hardy, everbearing plant.  Ideal for hanging pots.",
+                plantBlerb: "Attractive white berries add an intriguing dimension to any fruit salad."
+            },
             link: 'https://www.starkbros.com/growing-guide/article/all-about-pineberry'
         },
         elderberry: {
             zone: 4,
             type: 'Elderberry',
             name: 'Elderberry',
-            img: 'https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/232/44/487676436.jpg',
-            info: 'Here is a plant that is finally getting the attention it deserves.  Numerous new scientific studies are now verifying the benefits that previous generations have observed.  Not only is elderberry juice extremely high in antioxidants, the particular antioxidants found in elderberries have a proven antiviral effect as well.',
+            img: 'images/display/elderberry-M.jpg',
+            info: {
+                taste: "Tart & mildly sweet flavour.",
+                plantFact: "Extremely high in antioxidants.",
+                plantBlerb: "Proven antiviral effects."
+            },
             link: 'https://www.backyardgardener.com/plantname/sambucus-nigra-elderberry/'
         },
         schisandraVine: {
             zone: 4,
             type: 'Schisandra Vine',
             name: 'Schisandra Vine',
-            img: 'https://ae01.alicdn.com/kf/HTB1xlQlOVXXXXXxaFXXq6xXFXXXr/50-pcs-bag-schisandra-Seeds-DIY-Home-Garden-Plant-Chinese-Magnolia-Vine-Edible-Fruit-Seeds-Free.jpg',
-            info: 'This superberry is native to northeastern China and parts of Russia.  The Chinese name "Wu Wei Zu" means five flavoured berry, referring to its feat of being sweet, sour, salty, bitter and pungent all at the same time..  Although it is sometimes eaten fresh, Schisandra berries are more often dried and used in medicinal extracts.  Despite being extensively used in China for well over two centuries, it is just now becoming known in North America.  Study after study have validated the wide ranging claims of its adaptogenic, anti-aging and immune-boosting properties so that Schisandra is now rightfully considered one of the most highly protective of all medicinal plants.',
+            img: 'images/display/schisandra-vine-M.jpg',
+            info: {
+                taste: "Sweet, sour, salty, bitter & pungent flavour.",
+                plantFact: "Most often dried and used in medicinal extracts.",
+                plantBlerb: "Adaptogenic, anti-aging & immune-boosting properties"
+            },
             link: 'https://en.wikipedia.org/wiki/Schisandra_chinensis'
         },
         gojiBerry: {
             zone: 3,
             type: 'Goji Berry',
             name: 'Dynamite Goji Berry',
-            img: 'https://ae01.alicdn.com/kf/HTB15gFQSFXXXXcJXVXXq6xXFXXXi/100pcs-Wolfberry-Seeds-Chinese-Goji-Berries-Seed-Health-Benefit-Medlar-Goji-Berry-Lycii-Seed-Dwarf-Bush.jpg_640x640q90.jpg',
-            info: 'Native to Tibet, this superfood can grow in almost any soil type, even depleted soils as long as it is well drained.  The oblong bright orange-red fruit is most commonly dried, tasting like tart raisins, but they can also be eaten raw or added to soups and stews.  The young leaves and shoots are popular in Cantonese stir-fries.  The berries are packed with essential amino acids, vitamins and minerals which makes a potent elixir highly regarded as an immune system booster.  Other claims include: improved vision, increased white blood cell counts, better liver function and stronger muscles and bones.  An attractive 1.2 - 1.8 meter tall shrub, gojis have small, light purple, bell shaped flowers in spring.  Later the arching branches are loaded with crimson-orange berries.',
+            img: 'images/display/gojiberry-M.jpg',
+            info: {
+                taste: "Fruit is usually dried, tasting like tart raisins.",
+                plantFact: "Native to Tibet, this superfood can grow in almost any soil type.",
+                plantBlerb: "Packed with essential amino acids, vitamins & minerals."
+            },
             link: 'https://www.rhs.org.uk/advice/profile?PID=581'
         },
         aroniaBerry: {
             zone: 3,
             type: 'Aronia Berry',
             name: 'Aronia Berry',
-            img: 'https://i1.wp.com/www.justberryplants.co.za/wp-content/uploads/2017/11/Aronia-berry-black.jpg?fit=800%2C600',
-            info: 'Native to North America, the Aronia berry is a tough, disease resistant shrub that boasts masses of white flowers in the spring, spectacular red leaves in the fall and bunches of small black berries that hang well into the winter.  The berries are packer with antioxidants making it one of the best super fruits with 58% mire antioxidant content than blueberries.  The fruit can be used to make jam, juice, wine and tea.  Aronia berries are incredibly easy to grow in almost any conditions.',
+            img: 'images/display/aroniaberry-M.jpg',
+            info: {
+                taste: "Tender, sweet & moderately juicy",
+                plantFact: "58% more antioxidant content than blueberries.",
+                plantBlerb: "The fruit can be used to make jam, juice, wine and tea."
+            },
             link: 'https://www.backyardgardener.com/plantname/aronia-arbutifolia-red-chokeberry/'
         },
         autumnOlives: {
             zone: 3,
             type: 'Autumn Olives',
             name: 'Ruby Autumn Olives',
-            img: 'https://mdc.mo.gov/sites/default/files/styles/centered_full/public/media/images/2011/08/autumnolive_08-02-11.jpg?itok=K6jTXEUK',
-            info: 'Autumn olive also known as autumn silverberry, is a wide spreading shrub that can grow up to 5 meters tall.  It is not related to the olive but has similar looking grey-green leaves.  The pea-sized red berries ripen in late September and are loaded with the antioxidant lycopene which is reported to help protect against prostate and other cancers.  With lycopene levels 17 times higher than tomatoes, these berries make very healthy drinks or preserves.',
+            img: 'images/display/autumnolives-M.jpg',
+            info: {
+                taste: "Tart & mildly sweet flavour.",
+                plantFact: "Not related to the olive but has similar looking grey-green leaves.",
+                plantBlerb: "Loaded with the antioxidant lycopene which is reported to help protect against prostate cancer."
+            },
             link: 'https://en.wikipedia.org/wiki/Elaeagnus_umbellata'
         }
     }
@@ -272,7 +336,6 @@ app.quiz.viablePlantsArr = function() {
             viablePlantsArr.push(app.solutionObj[app.quiz.userTreeBush][key]);
         }
     }
-    console.log(viablePlantsArr)
     app.quiz.populateDisplay(viablePlantsArr);
 }
 
@@ -290,13 +353,22 @@ app.quiz.findUserZone = function(){
 app.quiz.populateDisplay = function (viablePlantsArr) {
     let solution = viablePlantsArr[app.random(viablePlantsArr.length)];
     $(".content-section__display__img").attr("src", solution.img);
-    $(".content-section__display__text-box__title").text(solution.name);
-    $(".content-section__display").show();
+    $(".content-section__display__title").text(solution.name);
+    $(".display__text-box__link").attr("href", solution.link);
+    $(".content-section__display").toggleClass("display--grid").fadeIn(1000);
+    $(".reset-btn").show();
+    for(fact in solution.info){
+        console.log(solution.info[fact][fact]);
+        $(".display__text-box__list").append(`<li class="display__text-box__list__item">${solution["info"][fact]}</li>`)
+    }
 
 }
 
 //Event listeners
 app.listeners = function() {
+    const $container1 = $(".content-section__container1");
+    const $container2 = $(".content-section__container2");
+    const $container3 = $(".content-section__container3")
     // Window resize listeners
     $(window).resize(function () {
         // Updates vpHeight value when window resized
@@ -306,21 +378,27 @@ app.listeners = function() {
     });
     $('.content-section__container1__btn').on('click', function(e){
         e.preventDefault();
-        $('.content-section__container1').hide();
-        $('.content-section__container2').show();
+        $($container1).hide();
+        $($container2).show();
     });
     $(".content-section__container2__btn").on("click", function(e){
         e.preventDefault();
-        $('.content-section__container2').hide();
-        $('.content-section__container3').show();
+        $($container2).hide();
+        $($container3).show();
         app.quiz.userLocation = $(".content-section__container2__select option:selected").val();
         app.quiz.findUserZone();
     });
     $(".content-section__container3__btn").on("click", function(e){
         e.preventDefault();
-        $(".content-section__container3").hide();
+        $($container3).hide();
         app.quiz.userTreeBush = $("input[name=tree-bush]:checked").val();
         app.quiz.viablePlantsArr();
+    });
+    $(".reset-btn").on("click", function(){
+        $(".content-section__display").hide().toggleClass("display--grid");
+        $(".reset-btn").hide();
+        $(".display__text-box__list").empty();
+        $($container2).show();
     });
 }
 
@@ -331,5 +409,6 @@ app.init = function(){
     app.quiz.objToArr();
 }
 $(function(){
+    // $(".content-section__display").hide();
     app.init();
 });
