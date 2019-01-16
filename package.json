@@ -1,0 +1,24 @@
+{
+  "name": "lucas_knight_project3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass dev/styles/styles.scss public/styles/styles.css",
+    "bundle": "browserify dev/scripts/scripts.js > public/scripts/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armox/project3.git"
+  },
+  "author": "Lucas Knight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Armox/project3/issues"
+  },
+  "homepage": "https://github.com/Armox/project3#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

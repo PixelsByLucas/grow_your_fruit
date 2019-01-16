@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>🍑 Grow Your Fruit</title>
     <link href="https://fonts.googleapis.com/css?family=Bungee|Nunito+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="public/styles/styles.css">
 </head>
-<body class="background">
+<body>
+    <div class="background"></div>
     <main class="viewport">
         <section class="content-section">
             <div class="content-section__container1 clearfix">
@@ -17,7 +18,7 @@
                 <button class="content-section__container1__btn">Take The Quiz</button>
             </div>
             <div class="content-section__container2">
-                <h2>Tell us where you live  &#128076;</h2>
+                <h2>Tell us where you live 🏡</h2>
                 <p>By using data from Canada's <a href="http://www.planthardiness.gc.ca/?m=1" target="_blank">plant hardiness zones</a> we'll be able to determine what grows best in your area</p>
                 <form action="#">
                     <label for="city" class="container2__label">Select your city: </label>
@@ -30,7 +31,7 @@
                 <p>Do you prefer fruit from fruit trees or berry bushes?</p>
                 <form action="#" class="content-section__container3__radio">
                     <label for="tree">Tree</label>
-                    <input type="radio" name="tree-bush" value="tree" id="tree">
+                    <input type="radio" name="tree-bush" value="tree" id="tree" checked="true">
                     <label for="bush">Bush</label>
                     <input type="radio" name="tree-bush" value="bush" id="bush">
                     <button class="content-section__container3__btn">submit</button>
@@ -41,17 +42,23 @@
                 <img src="" alt="" class="content-section__display__img">
                 <div class="content-section__display__text-box">
                     <ul class="display__text-box__list"></ul>
-                    <a href="#" target="_blank" class="display__text-box__link">read more</a>
+                    <a href="#" target="_blank" class="display__text-box__link">
+                        <span class="display__text-box__link__read-more">Read More</span>🌱</a>
                 </div>
             </div>
-            <button class="reset-btn">Reset</button>
+            <div class="content-section__display__btns">
+                <a class="twitter-share-button" href="https://twitter.com/intent/tweet">
+                    <button>Tweet</button>
+                </a>
+                <button class="reset-btn">Reset</button>
+            </div>
         </section>
     </main>
 <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-<!-- loading my js -->
-    <script src="scripts/scripts.js"></script>
+<!-- load my scripts -->
+    <script src="public/scripts/bundle.js"></script>
     
 </body>
 </html>
