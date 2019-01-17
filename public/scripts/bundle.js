@@ -98,7 +98,7 @@ const solutionObj = {
     loganberry: {
       zone: 6,
       type: 'Blackberry, Raspberry Cross',
-      name: 'Loganberry',
+      name: 'Loganberry Bush',
       img: 'assets/images/loganberry-M.jpg',
       twitterImg: 'pic.twitter.com/d4up5F4nDq',
       info: {
@@ -111,7 +111,7 @@ const solutionObj = {
     goumiBerry: {
       zone: 5,
       type: 'Goumi Bush',
-      name: 'Goumi Bush',
+      name: 'Goumi Berry Bush',
       img: 'assets/images/goumiberry-M.jpg',
       twitterImg: 'pic.twitter.com/gRzwQay3Qg',
       info: {
@@ -137,7 +137,7 @@ const solutionObj = {
     pineberry: {
       zone: 4,
       type: 'Strawberry',
-      name: 'Pineberry',
+      name: 'Pineberries',
       img: 'assets/images/pineberry-M.jpg',
       twitterImg: 'pic.twitter.com/CJcP92ep7P',
       info: {
@@ -150,7 +150,7 @@ const solutionObj = {
     elderberry: {
       zone: 4,
       type: 'Elderberry',
-      name: 'Elderberry',
+      name: 'Elderberry Bush',
       img: 'assets/images/elderberry-M.jpg',
       twitterImg: 'pic.twitter.com/Xlhejunvsx',
         info: {
@@ -176,7 +176,7 @@ const solutionObj = {
     gojiBerry: {
       zone: 3,
       type: 'Goji Berry',
-      name: 'Dynamite Goji Berry',
+      name: 'Goji Berry Bush',
       img: 'assets/images/gojiberry-M.jpg',
       twitterImg: 'pic.twitter.com/44PST9AwWK',
       info: {
@@ -189,7 +189,7 @@ const solutionObj = {
     aroniaBerry: {
       zone: 3,
       type: 'Aronia Berry',
-      name: 'Aronia Berry',
+      name: 'Aronia Berry Bush',
       img: 'assets/images/aroniaberry-M.jpg',
       twitterImg: 'pic.twitter.com/Hho0h6qQ6q',
       info: {
@@ -202,7 +202,7 @@ const solutionObj = {
     autumnOlives: {
       zone: 3,
       type: 'Autumn Olives',
-      name: 'Ruby Autumn Olives',
+      name: 'Autumn Olive Bush',
       img: 'assets/images/autumnolives-M.jpg',
       twitterImg: 'pic.twitter.com/yhqQd7j8qR',
       info: {
@@ -277,9 +277,6 @@ const app = {
                 if (firstRowPos.top > (iconStartPos.top + iconHeight)) {
                     this.addRow()
                 }
-                if(!window.focus) {
-                    console.log("OUT OF FOCUS")
-                }
             }
 
             setInterval(intervalCallback.bind(this), 100)
@@ -336,26 +333,40 @@ const app = {
         },
         populateDisplay(viablePlantsArr) {
             let solution = viablePlantsArr[random(viablePlantsArr.length)]
-            this.populateTweet(solution)
             $(".content-section__display__btns").show()
             $(".content-section__display").toggleClass("display--grid")
-            $(".content-section__display").show().animate({ opacity: 1 }, 1000, function () { console.log("fading in") })
+            $(".content-section__display").show().animate({ opacity: 1 }, 1000)
             $(".content-section__display__img").attr("src", solution.img)
             $(".content-section__display__title").text(solution.name)
             $(".display__text-box__link").attr("href", solution.link)
             for(fact in solution.info) {
                 $(".display__text-box__list").append(`<li class="display__text-box__list__item">${solution["info"][fact]}</li>`)
             }
+            this.populateTweet(solution)
         },
         populateTweet(solution) {
+            const article = this.getArticle({ ...solution })
             $(".twitter-share-button").attr("href", 
-                `https://twitter.com/intent/tweet?text=This%20year%20I'm%20growing%20a%20${solution.name}%20which%20grows%20in%20hardiness%20zone%20${solution.zone}%20or%20above!
+                `https://twitter.com/intent/tweet?text=This%20year%20I'm%20growing%20${article}%20${solution.name}%20which%20grows%20in%20hardiness%20zone%20${solution.zone}%20or%20above!
                 %0A${solution.twitterImg}
                 %0ATake%20the%20quiz:&url=http://lucas-knight.com/grow_your_fruit/`
             )
+        },
+        getArticle(solution) {
+            const nameArr = solution.name.toLowerCase().split(" ")
+            if(nameArr.length < 2) {
+                return ''
+            }
+            const nameFirstLetter = nameArr[0].charAt(0)
+            const vowels = ['e', 'a', 'i', 'o', 'u']
+            if(vowels.includes(nameFirstLetter)) {
+                return 'an'
+            } else {
+                return 'a'
+            }
         }
-
     },
+
     //Event listeners
     listeners() {
         const $container1 = $(".content-section__container1");
