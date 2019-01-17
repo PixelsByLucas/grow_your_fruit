@@ -240,11 +240,9 @@ const app = {
     // === background logic ===
     background: {
         icons: [350629, 351039, 351121, 351156, 351625, 351637, 351802, 351812, 351945, 352260, 353283],
-
         randomIcon() {
             return this.icons[random(this.icons.length)]
         },
-
         addRow() {
             $('.background').prepend('<ul class="background__roster"></ul>');
             for(let i = 0; i < 10; i++){
@@ -261,7 +259,6 @@ const app = {
                 });
             }
         },
-
         interval() {
             const viewHeight = $("body").height()
             const iconStartPos = $(".background__roster").offset()
@@ -321,7 +318,6 @@ const app = {
             }
             app.quiz.populateDisplay(viablePlantsArr);
         },
-        // Find user zone based on their location, using app.zoneObj
         findUserZone() {
             for(cityArr in zonesObj) {
                 let num = $.inArray(this.userLocation, zonesObj[cityArr])
@@ -332,7 +328,7 @@ const app = {
             }
         },
         populateDisplay(viablePlantsArr) {
-            let solution = viablePlantsArr[random(viablePlantsArr.length)]
+            const solution = viablePlantsArr[random(viablePlantsArr.length)]
             $(".content-section__display__btns").show()
             $(".content-section__display").toggleClass("display--grid")
             $(".content-section__display").show().animate({ opacity: 1 }, 1000)
@@ -366,8 +362,7 @@ const app = {
             }
         }
     },
-
-    //Event listeners
+    // === event listeners ===
     listeners() {
         const $container1 = $(".content-section__container1");
         const $container2 = $(".content-section__container2");
@@ -398,7 +393,6 @@ const app = {
             $($container2).show();
         });
     },
-    
     init() {
         this.listeners();
         $(".background").fadeIn(65000)
